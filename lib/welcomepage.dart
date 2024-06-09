@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 import 'package:inkmelo_app/components/PrimaryButton.dart';
+import 'package:inkmelo_app/HomePage/HomePage.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -81,7 +83,9 @@ class WelcomePage extends StatelessWidget {
             padding: const EdgeInsets.all(10),
             child: PrimaryButton(
               btnName: "CONTINUE",
-              ontap: () {},
+              ontap: () {
+                Get.offAll(HomePage());
+              },
             ))
       ],
     ));
