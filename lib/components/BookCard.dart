@@ -2,10 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BookCard extends StatelessWidget {
-  final String bookUrl;
+  final String coverUrl;
   final String title;
   final VoidCallback ontap;
-  const BookCard({super.key, required this.bookUrl, required this.title, required this.ontap});
+  const BookCard(
+      {super.key,
+      required this.coverUrl,
+      required this.title,
+      required this.ontap});
 
   @override
   Widget build(BuildContext context) {
@@ -20,36 +24,36 @@ class BookCard extends StatelessWidget {
               Container(
                 decoration: BoxDecoration(
                   boxShadow: [
-                  BoxShadow(
-                    color: Theme.of(context)
-                        .colorScheme
-                        .primary
-                        .withOpacity(0.2),
-                    spreadRadius: 1,
-                    blurRadius: 8,
-                    offset: Offset(2, 2),
-                  )
-                ],
+                    BoxShadow(
+                      color: Theme.of(context)
+                          .colorScheme
+                          .primary
+                          .withOpacity(0.2),
+                      spreadRadius: 2,
+                      blurRadius: 8,
+                      offset: Offset(2, 2),
+                    )
+                  ],
                 ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
-                  child: Image.asset(
-                    bookUrl,
+                  child: Image.network(
+                    coverUrl,
                     width: 120,
                   ),
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(height: 10),
               Text(
                 title,
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.bodySmall,
+                maxLines: 1,
+                style: Theme.of(context).textTheme.bodyMedium,
               )
             ],
           ),
         ),
       ),
     );
-
   }
 }

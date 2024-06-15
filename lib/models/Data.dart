@@ -1,79 +1,94 @@
+
 import 'package:inkmelo_app/models/BookModel.dart';
 
 var categoryData = [
-
   {
-    "icon":"assets/Icons/heart.svg",
-    "lebel":"Romance",
+    "icon": "assets/Icons/heart.svg",
+    "label": "Romance",
   },
   {
-    "icon":"assets/Icons/plane.svg",
-    "lebel":"Travel",
+    "icon": "assets/images/airplane.svg",
+    "label": "Travel",
   },
   {
-    "icon":"assets/Icons/world.svg",
-    "lebel":"Documentary",
+    "icon": "assets/Icons/world.svg",
+    "label": "Documentary",
   },
   {
-    "icon":"assets/Icons/heart.svg",
-    "lebel":"Love Story",
-  }
-
+    "icon": "assets/Icons/heart.svg",
+    "label": "Love Story",
+  },
 ];
 
 var bookData = [
-
   BookModel(
-    id: "1",
-    title: "1-2-3 Magic",
-    description: "",
-    aboutAuthor: "This is Thomas W.PheLan, PhD",
-    audioLen: "20",
-    author: "Thomas W.PheLan, PhD",
-    bookUrl:"assets/images/1-2-3 Magic.jpg",
-    rating: "4.2",
-    category: "Documentary",
-    numberOfRating: 10,
-    price: 100,
-  ),
-BookModel(
-    id: "2",
-    title: "Living in the light",
-    description: "",
-    aboutAuthor: "This is Shakti Gawain",
-    audioLen: "20",
-    author: "Shakti Gawain",
-    bookUrl:"assets/images/Living in the light.jpg",
-    rating: "3.2",
-    category: "Documentary",
-    numberOfRating: 110,
-    price: 120,
-  ),
-BookModel(
-    id: "3",
-    title: "Resisting Happiness",
-    description: "",
-    aboutAuthor: "This is Matthew Kelly",
-    audioLen: "20",
-    author: "Matthew Kelly",
-    bookUrl:"assets/images/Resisting Happiness.jpg",
-    rating: "4.5",
-    category: "Documentary",
-  numberOfRating: 102,
-    price: 220,
-  ),
+      id: "1",
+      title:
+      "Boundraties and thi is my first book and and thi is my first book and ",
+      description:
+      "n publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum",
+      aboutAuthor: "hi my name is Nitish Roy and i have written this book",
+      audioLen: "20",
+      author: "Nitish Roy",
+      coverUrl: "assets/images/boundraries.jpg",
+      rating: "4.2",
+      category: "Documentary",
+      numberofRating: "10,",
+      price: 100,
+      pages: 234,
+      language: "ENG",
+      bookurl:
+      "https://cdn.syncfusion.com/content/PDFViewer/flutter-succinctly.pdf"),
+  BookModel(
+      id: "2",
+      title: "Daily Stoice",
+      description:
+      "n publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum",
+      aboutAuthor: "hi my name is Nitish Roy and i have written this book",
+      audioLen: "20",
+      author: "Nitish Roy",
+      coverUrl: "assets/images/daily stoic.jpg",
+      rating: "4.2",
+      category: "Documentary",
+      price: 100,
+      numberofRating: "10,",
+      language: "ENG",
+      pages: 234,
+      bookurl:
+      "https://cdn.syncfusion.com/content/PDFViewer/flutter-succinctly.pdf"),
+  BookModel(
+      id: "3",
+      title: "Give and Take",
+      description:
+      "n publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum",
+      aboutAuthor: "hi my name is Nitish Roy and i have written this book",
+      audioLen: "20",
+      author: "Nitish Roy",
+      coverUrl: "assets/images/Give and Take.jpg",
+      rating: "4.2",
+      category: "Documentary",
+      numberofRating: "10,",
+      price: 100,
+      language: "ENG",
+      pages: 234,
+      bookurl:
+      "https://cdn.syncfusion.com/content/PDFViewer/flutter-succinctly.pdf"),
   BookModel(
     id: "4",
-    title: "The Choice",
-    description: "",
-    aboutAuthor: "This is  Edith Eger",
+    title: "When the moon split",
+    description:
+    "n publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum",
+    aboutAuthor: "hi my name is Nitish Roy and i have written this book",
     audioLen: "20",
-    author: " Edith Eger",
-    bookUrl:"assets/images/The Choice.jpg",
-    rating: "4.8",
+    author: "Nitish Roy",
+    coverUrl: "assets/images/When the moon split.jpg",
+    rating: "4.2",
     category: "Documentary",
-    numberOfRating: 123,
-    price: 220,
+    price: 100,
+    pages: 234,
+    language: "ENG",
+    numberofRating: "10,",
+    bookurl:
+    "https://cdn.syncfusion.com/content/PDFViewer/flutter-succinctly.pdf",
   )
-
 ];

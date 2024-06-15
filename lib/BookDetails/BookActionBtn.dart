@@ -7,7 +7,7 @@ class BookActionBtn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    return Container(
       height: 60,
       padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
       decoration: BoxDecoration(
@@ -18,7 +18,7 @@ class BookActionBtn extends StatelessWidget {
         children: [
           Row(
             children: [
-              SvgPicture.asset("Assets/Icons/book.svg"),
+              SvgPicture.asset("assets/Icons/book.svg"),
               SizedBox(width: 10),
               Text(
                 "READ BOOK",
@@ -39,7 +39,7 @@ class BookActionBtn extends StatelessWidget {
           ),
           Row(
             children: [
-              SvgPicture.asset("Assets/Icons/playe.svg"),
+              SvgPicture.asset("assets/images/play.svg"),
               SizedBox(width: 10),
               Text(
                 "PLAY BOOK",
