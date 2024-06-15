@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:inkmelo_app/BookDetails/BookDetails.dart';
 import 'package:inkmelo_app/HomePage/Widgets/AppBar.dart';
 import 'package:inkmelo_app/HomePage/Widgets/CategoryWidget.dart';
 import 'package:inkmelo_app/HomePage/Widgets/MyInputTextField.dart';
@@ -109,7 +111,9 @@ class HomePage extends StatelessWidget {
                       children: bookData.map((e) => BookCard(
                         title: e.title!,
                         bookUrl: e.bookUrl!,
-                        ontap: () {},
+                        ontap: () {
+                          Get.to(BookDetails());
+                        },
                       )).toList(),
         
                     ),

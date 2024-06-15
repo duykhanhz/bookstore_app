@@ -18,7 +18,8 @@ class BookCard extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                decoration: BoxDecoration(boxShadow: [
+                decoration: BoxDecoration(
+                  boxShadow: [
                   BoxShadow(
                     color: Theme.of(context)
                         .colorScheme
