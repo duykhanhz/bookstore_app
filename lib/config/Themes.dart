@@ -13,8 +13,6 @@ var lightTheme = ThemeData(
       onSecondary: backgroundColor,
       error: Colors.red,
       onError: fontColor,
-      background: backgroundColor,
-      onBackground: fontColor,
       surface: backgroundColor,
       onSurface: fontColor,
       onPrimaryContainer: secondlabelColor,
