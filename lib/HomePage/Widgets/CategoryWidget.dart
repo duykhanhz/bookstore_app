@@ -23,7 +23,7 @@ class CategoryWidget extends StatelessWidget {
           child: Row(children: [
             SvgPicture.asset(iconPath),
             const SizedBox(width: 10,),
-            Text("Romance")
+            Text(btnName),
           ],
           ),
         ),
