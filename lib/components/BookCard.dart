@@ -37,7 +37,7 @@ class BookCard extends StatelessWidget {
                 ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
-                  child: Image.network(
+                  child: Image.asset(
                     coverUrl,
                     width: 120,
                   ),

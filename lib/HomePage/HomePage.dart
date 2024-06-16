@@ -42,10 +42,10 @@ class HomePage extends StatelessWidget {
                                     .textTheme
                                     .bodyLarge
                                     ?.copyWith(
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .background,
-                                    ),
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .background,
+                                ),
                               ),
                               Text(
                                 "Nitish",
@@ -53,10 +53,10 @@ class HomePage extends StatelessWidget {
                                     .textTheme
                                     .headlineMedium
                                     ?.copyWith(
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .background,
-                                    ),
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .background,
+                                ),
                               ),
                             ],
                           ),
@@ -70,10 +70,10 @@ class HomePage extends StatelessWidget {
                                       .textTheme
                                       .labelSmall
                                       ?.copyWith(
-                                        color: Theme.of(context)
-                                            .colorScheme
-                                            .background,
-                                      ),
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .background,
+                                  ),
                                 ),
                               ),
                             ],
@@ -89,10 +89,10 @@ class HomePage extends StatelessWidget {
                                     .textTheme
                                     .labelMedium
                                     ?.copyWith(
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .background,
-                                    ),
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .background,
+                                ),
                               ),
                             ],
                           ),
@@ -103,9 +103,9 @@ class HomePage extends StatelessWidget {
                               children: categoryData
                                   .map(
                                     (e) => CategoryWidget(
-                                        iconPath: e["icon"]!,
-                                        btnName: e["label"]!),
-                                  )
+                                    iconPath: e["icon"]!,
+                                    btnName: e["label"]!),
+                              )
                                   .toList(),
                             ),
                           )
@@ -136,11 +136,11 @@ class HomePage extends StatelessWidget {
                       children: bookData
                           .map(
                             (e) => BookCard(
-                              title: e.title!,
-                              coverUrl: e.coverUrl!,
-                              ontap: () {},
-                            ),
-                          )
+                          title: e.title!,
+                          coverUrl: e.coverUrl!,
+                          ontap: () {},
+                        ),
+                      )
                           .toList(),
                     ),
                   ),
@@ -158,13 +158,13 @@ class HomePage extends StatelessWidget {
                       children: bookData
                           .map(
                             (e) => BookTile(
-                                title: e.title!,
-                                coverUrl: e.coverUrl!,
-                                author: e.author!,
-                                price: e.price!,
-                                rating: e.rating!,
-                                totalRating: 12),
-                          )
+                            title: e.title!,
+                            coverUrl: e.coverUrl!,
+                            author: e.author!,
+                            price: e.price!,
+                            rating: e.rating!,
+                            totalRating: 12),
+                      )
                           .toList())
                 ],
               ),
