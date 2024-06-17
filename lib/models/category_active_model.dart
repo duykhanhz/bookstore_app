@@ -1,4 +1,3 @@
-import 'package:equatable/equatable.dart';
 import 'package:inkmelo_app/entities/category.dart';
 
 class ActiveCategoryModel extends Category {
@@ -20,7 +19,7 @@ class ActiveCategoryModel extends Category {
         super.id,
         super.name,
         super.description,
-        this.isActive,
+        isActive,
         super.createdAt,
         super.lastUpdatedTime,
         super.lastChangedBy,

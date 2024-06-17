@@ -26,16 +26,16 @@ class UserModel extends User {
     );
   }
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['username'] = this.username;
-    data['fullname'] = this.fullname;
-    data['email'] = this.email;
-    data['role'] = this.role;
-    data['createdAt'] = this.createdAt;
-    data['lastUpdatedTime'] = this.lastUpdatedTime;
-    data['lastChangedBy'] = this.lastChangedBy;
-    data['status'] = this.status;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['username'] = username;
+    data['fullname'] = fullname;
+    data['email'] = email;
+    data['role'] = role;
+    data['createdAt'] = createdAt;
+    data['lastUpdatedTime'] = lastUpdatedTime;
+    data['lastChangedBy'] = lastChangedBy;
+    data['status'] = status;
     return data;
   }
 }

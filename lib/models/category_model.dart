@@ -2,7 +2,7 @@ import 'package:inkmelo_app/entities/category.dart';
 
 
 class CategoryModel extends Category {
-  CategoryModel(
+  const CategoryModel(
       {required super.id,
         required super.name,
         required super.description,
@@ -23,14 +23,14 @@ class CategoryModel extends Category {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['name'] = this.name;
-    data['description'] = this.description;
-    data['createdAt'] = this.createdAt;
-    data['lastUpdatedTime'] = this.lastUpdatedTime;
-    data['lastChangedBy'] = this.lastChangedBy;
-    data['status'] = this.status;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['name'] = name;
+    data['description'] = description;
+    data['createdAt'] = createdAt;
+    data['lastUpdatedTime'] = lastUpdatedTime;
+    data['lastChangedBy'] = lastChangedBy;
+    data['status'] = status;
     return data;
   }
 }

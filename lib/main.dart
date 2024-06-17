@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:inkmelo_app/presentations/screens/welcomepage.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -9,6 +10,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  const GetMaterialApp();
+    return  MaterialApp(
+      // navigatorKey: navigatorKey,
+      debugShowCheckedModeBanner: false,
+      title: 'Unibean',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
+        useMaterial3: true,
+      ),
+    );
   }
 }
