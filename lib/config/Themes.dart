@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:inkmelo_app/config/Colors.dart';
+import 'package:inkmelo_app/config/colors.dart';
 
 var lightTheme = ThemeData(
   brightness: Brightness.light,
@@ -13,8 +13,6 @@ var lightTheme = ThemeData(
       onSecondary: backgroundColor,
       error: Colors.red,
       onError: fontColor,
-      background: backgroundColor,
-      onBackground: fontColor,
       surface: backgroundColor,
       onSurface: fontColor,
       onPrimaryContainer: secondlabelColor,
