@@ -1,4 +1,3 @@
-import 'package:inkmelo_app/models/book_model.dart';
 
 import '../entities/book_item.dart';
 
@@ -32,17 +31,17 @@ class BookItemModel extends BookItem {
   }
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['bookId'] = this.bookId;
-    data['bookTitle'] = this.bookTitle;
-    data['bookCoverImg'] = this.bookCoverImg;
-    data['type'] = this.type;
-    data['source'] = this.source;
-    data['duration'] = this.duration;
-    data['createdAt'] = this.createdAt;
-    data['lastUpdatedTime'] = this.lastUpdatedTime;
-    data['lastChangedBy'] = this.lastChangedBy;
-    data['status'] = this.status;
+    data['id'] = id;
+    data['bookId'] = bookId;
+    data['bookTitle'] = bookTitle;
+    data['bookCoverImg'] = bookCoverImg;
+    data['type'] = type;
+    data['source'] = source;
+    data['duration'] = duration;
+    data['createdAt'] = createdAt;
+    data['lastUpdatedTime'] = lastUpdatedTime;
+    data['lastChangedBy'] = lastChangedBy;
+    data['status'] = status;
     return data;
   }
 

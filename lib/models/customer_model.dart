@@ -6,7 +6,7 @@ class CustomerModel {
 
   factory CustomerModel.fromJson(Map<String, dynamic> json) {
     return CustomerModel(
-        fullname: json['fullname'], profileImg: json['profileImg']);
+        fullname: json['fullname'] ?? '', profileImg: json['profileImg'] ?? '');
   }
 
   Map<String, dynamic> toJson() {

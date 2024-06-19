@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:inkmelo_app/config/Colors.dart';
+import 'package:inkmelo_app/config/colors.dart';
 
 var lightTheme = ThemeData(
   brightness: Brightness.light,

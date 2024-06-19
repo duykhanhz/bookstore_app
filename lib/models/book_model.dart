@@ -9,23 +9,23 @@ class BookModel extends Book {
   final PublisherModel publisher;
   const BookModel(
       {required super.id,
-        required super.title,
-        required super.iSBN,
-        required super.publicationDecisionNumber,
-        required super.publicationRegistConfirmNum,
-        required super.depositCopy,
-        required super.author,
-        required super.description,
-        required super.bookCoverImg,
-        required super.averageStar,
-        required super.totalRating,
-        required super.createdAt,
-        required super.lastUpdatedTime,
-        required super.lastChangedBy,
-        required super.status,
-        required this.genres,
-        required this.publisher,
-        required this.ratings});
+      required super.title,
+      required super.iSBN,
+      required super.publicationDecisionNumber,
+      required super.publicationRegistConfirmNum,
+      required super.depositCopy,
+      required super.author,
+      required super.description,
+      required super.bookCoverImg,
+      required super.averageStar,
+      required super.totalRating,
+      required super.createdAt,
+      required super.lastUpdatedTime,
+      required super.lastChangedBy,
+      required super.status,
+      required this.genres,
+      required this.publisher,
+      required this.ratings});
 
   factory BookModel.fromJson(Map<String, dynamic> json) {
     var publisher = PublisherModel.fromJson(json['publisher']);
@@ -37,23 +37,23 @@ class BookModel extends Book {
         .toList();
     return BookModel(
       id: json['id'],
-      title: json['title'],
-      iSBN: json['ISBN'],
-      publicationDecisionNumber: json['publicationDecisionNumber'],
-      publicationRegistConfirmNum: json['publicationRegistConfirmNum'],
-      depositCopy: json['depositCopy'],
-      author: json['author'],
-      description: json['description'],
-      bookCoverImg: json['bookCoverImg'],
-      averageStar: json['averageStar'],
-      totalRating: json['totalRating'],
+      title: json['title'] ?? '',
+      iSBN: json['ISBN'] ?? '',
+      publicationDecisionNumber: json['publicationDecisionNumber'] ?? '',
+      publicationRegistConfirmNum: json['publicationRegistConfirmNum'] ?? '',
+      depositCopy: json['depositCopy'] ?? '',
+      author: json['author'] ?? '',
+      description: json['description'] ?? '',
+      bookCoverImg: json['bookCoverImg'] ?? '',
+      averageStar: json['averageStar'] ?? '',
+      totalRating: json['totalRating'] ?? '',
       publisher: publisher,
       ratings: ratings,
       genres: genres,
-      createdAt: json['createdAt'],
-      lastUpdatedTime: json['lastUpdatedTime'],
-      lastChangedBy: json['lastChangedBy'],
-      status: json['status'],
+      createdAt: json['createdAt'] ?? '',
+      lastUpdatedTime: json['lastUpdatedTime'] ?? '',
+      lastChangedBy: json['lastChangedBy'] ?? '',
+      status: json['status'] ?? '',
     );
   }
 
@@ -71,9 +71,9 @@ class BookModel extends Book {
     data['averageStar'] = averageStar;
     data['totalRating'] = totalRating;
     data['publisher'] = publisher.toJson();
-      data['ratings'] = ratings.map((v) => v.toJson()).toList();
-      data['genres'] = genres.map((v) => v.toJson()).toList();
-      data['createdAt'] = createdAt;
+    data['ratings'] = ratings.map((v) => v.toJson()).toList();
+    data['genres'] = genres.map((v) => v.toJson()).toList();
+    data['createdAt'] = createdAt;
     data['lastUpdatedTime'] = lastUpdatedTime;
     data['lastChangedBy'] = lastChangedBy;
     data['status'] = status;

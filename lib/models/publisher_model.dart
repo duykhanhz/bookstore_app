@@ -3,24 +3,24 @@ import '../entities/publisher.dart';
 class PublisherModel extends Publisher {
   const PublisherModel(
       {required super.id,
-        required super.name,
-        required super.description,
-        required super.logoImg,
-        required super.createdAt,
-        required super.lastUpdatedTime,
-        required super.lastChangedBy,
-        required super.status});
+      required super.name,
+      required super.description,
+      required super.logoImg,
+      required super.createdAt,
+      required super.lastUpdatedTime,
+      required super.lastChangedBy,
+      required super.status});
 
   factory PublisherModel.fromJson(Map<String, dynamic> json) {
     return PublisherModel(
-      id: json['id'],
-      name: json['name'],
-      description: json['description'],
-      logoImg: json['logoImg'],
-      createdAt: json['createdAt'],
-      lastUpdatedTime: json['lastUpdatedTime'],
-      lastChangedBy: json['lastChangedBy'],
-      status: json['status'],
+      id: json['id'] ?? '',
+      name: json['name'] ?? '',
+      description: json['description'] ?? '',
+      logoImg: json['logoImg'] ?? '',
+      createdAt: json['createdAt'] ?? '',
+      lastUpdatedTime: json['lastUpdatedTime'] ?? '',
+      lastChangedBy: json['lastChangedBy'] ?? '',
+      status: json['status'] ?? '',
     );
   }
 

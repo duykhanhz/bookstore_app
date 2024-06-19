@@ -11,10 +11,10 @@ class RatingModel {
   factory RatingModel.fromJson(Map<String, dynamic> json) {
     var customerModel = CustomerModel.fromJson(json['customer']);
     return RatingModel(
-      star: json['star'],
-      comment: json['comment'],
+      star: json['star'] ?? '',
+      comment: json['comment'] ?? '', 
       customer: customerModel,
-      createdAt: json['createdAt'],
+      createdAt: json['createdAt'] ?? '',
     );
   }
 

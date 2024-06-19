@@ -10,7 +10,7 @@ class Book extends Equatable {
   final String author;
   final String description;
   final String bookCoverImg;
-  final int averageStar;
+  final double averageStar;
   final int totalRating;
   final String createdAt;
   final String lastUpdatedTime;
