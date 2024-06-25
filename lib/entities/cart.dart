@@ -6,5 +6,6 @@ class Cart extends Equatable {
 
   const Cart({required this.id, required this.customerID});
 
+  @override
   List<Object?> get props => [id, customerID];
 }

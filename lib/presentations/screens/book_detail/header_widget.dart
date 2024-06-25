@@ -21,7 +21,7 @@ class BookDetailsHeader extends StatelessWidget {
             const MyBackbutton(),
             SvgPicture.asset(
               "assets/Icons/heart.svg",
-              color: Theme.of(context).colorScheme.background,
+              color: Theme.of(context).colorScheme.surface,
             ),
           ],
         ),
@@ -89,7 +89,7 @@ class BookDetailsHeader extends StatelessWidget {
                 ),
               ],
             ),
-            Column(
+            const Column(
               children: [
                 Text(
                   "Language",
@@ -107,7 +107,7 @@ class BookDetailsHeader extends StatelessWidget {
                 ),
               ],
             ),
-            Column(
+            const Column(
               children: [
                 Text(
                   "Audio",

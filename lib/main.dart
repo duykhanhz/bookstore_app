@@ -2,10 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:inkmelo_app/blocs/authentication/authentication_bloc.dart';
 import 'package:inkmelo_app/blocs/book/book_bloc.dart';
+import 'package:inkmelo_app/blocs/book_item/book_item_bloc.dart';
+import 'package:inkmelo_app/blocs/book_item/book_item_event.dart';
 import 'package:inkmelo_app/blocs/category/category_bloc.dart';
+import 'package:inkmelo_app/blocs/genre/genre_bloc.dart';
+import 'package:inkmelo_app/blocs/genre/genre_event.dart';
+import 'package:inkmelo_app/blocs/user/user_bloc.dart';
+import 'package:inkmelo_app/blocs/user/user_event.dart';
 import 'package:inkmelo_app/presentations/screens/welcome/welcome_page.dart';
 import 'package:inkmelo_app/repositories/authen_repository.dart';
+import 'package:inkmelo_app/repositories/book_item_repository.dart';
 import 'package:inkmelo_app/repositories/category_repository.dart';
+import 'package:inkmelo_app/repositories/genre_repository.dart';
+import 'package:inkmelo_app/repositories/user_repository.dart';
 
 import 'config/app_router.dart';
 import 'repositories/book_repository.dart';
@@ -30,6 +39,12 @@ class MyApp extends StatelessWidget {
         RepositoryProvider(
           create: (context) => BookRepository(),
         ),
+        RepositoryProvider(
+          create: (context) => GenreRepository(),
+        ),
+        RepositoryProvider(
+          create: (context) => BookItemRepository(),
+        ),
       ],
       child: MultiBlocProvider(
         providers: [
@@ -45,6 +60,18 @@ class MyApp extends StatelessWidget {
           BlocProvider(
             create: (context) =>
                 AuthenticationBloc(authenRepository: AuthenRepository()),
+          ),
+          BlocProvider(
+            create: (context) =>
+                GenreBloc(genreRepository: GenreRepository())..add(LoadGenre()),
+          ),
+          BlocProvider(
+            create: (context) =>
+            BookItemBloc(bookItemRepository:  BookItemRepository())..add(LoadBookItem()),
+          ),
+          BlocProvider(
+            create: (context) =>
+            UserBloc(userRepository:  UserRepository())..add(LoadUser()),
           ),
         ],
         child: MaterialApp(

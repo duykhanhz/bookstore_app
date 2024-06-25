@@ -17,6 +17,7 @@ class CartDetail extends Equatable{
     required this.status
 });
 
+  @override
   List<Object?> get props => [
     id,
     quantity,

@@ -54,7 +54,7 @@ class _FormLoginState extends State<FormLogin> {
       child: Column(
         children: [
           loginWidget,
-          SizedBox(
+          const SizedBox(
             height: 25,
           ),
           PrimaryButton(
@@ -89,16 +89,16 @@ Widget _buildAuthIntial(
     decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(15),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
-            color: const Color(0x0c000000),
+            color: Color(0x0c000000),
             offset: Offset(0, 4),
             blurRadius: 2.5,
           )
         ]),
     child: Column(
       children: [
-        SizedBox(
+        const SizedBox(
           height: 30,
         ),
         TextFormFieldDefault(
@@ -112,7 +112,7 @@ Widget _buildAuthIntial(
           },
           textController: userNameController,
         ),
-        SizedBox(
+        const SizedBox(
           height: 25,
         ),
         TextFormFieldPassword(
@@ -127,7 +127,7 @@ Widget _buildAuthIntial(
           },
           textController: passwordController,
         ),
-        SizedBox(
+        const SizedBox(
           height: 30,
         ),
       ],
@@ -142,7 +142,7 @@ Widget _buildAuthFailed(TextEditingController userNameController,
     decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(15),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             color: Color(0x0c000000),
             offset: Offset(0, 4),
@@ -151,7 +151,7 @@ Widget _buildAuthFailed(TextEditingController userNameController,
         ]),
     child: Column(
       children: [
-        SizedBox(
+        const SizedBox(
           height: 30,
         ),
         TextFormFieldDefault(
@@ -165,7 +165,7 @@ Widget _buildAuthFailed(TextEditingController userNameController,
           },
           textController: userNameController,
         ),
-        SizedBox(
+        const SizedBox(
           height: 25,
         ),
         TextFormFieldPassword(
@@ -181,7 +181,7 @@ Widget _buildAuthFailed(TextEditingController userNameController,
           textController: passwordController,
         ),
         Padding(
-          padding: EdgeInsets.only(top: 5),
+          padding: const EdgeInsets.only(top: 5),
           child: Text(
             error,
             style: GoogleFonts.openSans(
@@ -190,7 +190,7 @@ Widget _buildAuthFailed(TextEditingController userNameController,
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
       ],

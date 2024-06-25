@@ -24,7 +24,7 @@ class TextFormFieldDefault extends StatelessWidget {
         validator: validator,
         controller: textController,
         style: GoogleFonts.openSans(
-            textStyle: TextStyle(
+            textStyle: const TextStyle(
                 color: Colors.black,
                 fontSize: 15  ,
                 fontWeight: FontWeight.bold)),
@@ -33,18 +33,18 @@ class TextFormFieldDefault extends StatelessWidget {
           hintText: hintText,
           floatingLabelBehavior: FloatingLabelBehavior.always,
           labelStyle: GoogleFonts.openSans(
-            textStyle: TextStyle(
+            textStyle: const TextStyle(
                 color: primaryColor,
                 fontSize: 15  ,
                 fontWeight: FontWeight.w900),
           ),
           hintStyle: GoogleFonts.openSans(
-              textStyle: TextStyle(
+              textStyle: const TextStyle(
                   color: kLowTextColor,
                   fontSize: 15  ,
                   fontWeight: FontWeight.w700)),
           contentPadding:
-              EdgeInsets.symmetric(horizontal: 26  , vertical: 10  ),
+              const EdgeInsets.symmetric(horizontal: 26  , vertical: 10  ),
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(28  ),
               borderSide: const BorderSide(

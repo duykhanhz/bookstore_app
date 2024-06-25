@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:inkmelo_app/blocs/genre/genre_bloc.dart';
+import 'package:inkmelo_app/blocs/genre/genre_state.dart';
 import 'package:inkmelo_app/config/colors.dart';
 import 'package:inkmelo_app/presentations/screens/book_detail/book_detail_page.dart';
 import 'package:inkmelo_app/presentations/widgets/book_card.dart';
@@ -43,7 +45,7 @@ class HomePage extends StatelessWidget {
                           Row(
                             children: [
                               Text(
-                                "Good Morining✌️",
+                                "Hello ✌️",
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyLarge
@@ -55,7 +57,7 @@ class HomePage extends StatelessWidget {
                                     ),
                               ),
                               Text(
-                                "Nitish",
+                                "Khanh",
                                 style: Theme.of(context)
                                     .textTheme
                                     .headlineMedium
@@ -78,7 +80,7 @@ class HomePage extends StatelessWidget {
                                       ?.copyWith(
                                         color: Theme.of(context)
                                             .colorScheme
-                                            .background,
+                                            .surface,
                                       ),
                                 ),
                               ),
@@ -104,23 +106,24 @@ class HomePage extends StatelessWidget {
                             ],
                           ),
                           const SizedBox(height: 10),
-                          BlocBuilder<CategoryBloc, CategoryState>(
+                          BlocBuilder<GenreBloc, GenreState>(
                             builder: (context, state) {
-                              if (state is CategoryLoaded) {
+                              if (state is GenreLoaded) {
                                 return SizedBox(
                                   height: 50,
                                   width: MediaQuery.of(context).size.width,
                                   child: ListView.builder(
                                     scrollDirection: Axis.horizontal,
-                                    itemCount: state.categories.length,
+                                    itemCount: state.genres.length,
                                     itemBuilder: (context, index) {
                                       return CategoryWidget(
                                           btnName:
-                                              state.categories[index].name);
+                                              state.genres[index].name
+                                      );
                                     },
                                   ),
                                 );
-                              } else if (state is CategoryLoading) {
+                              } else if (state is GenreLoading) {
                                 return const Center(
                                   child: CircularProgressIndicator(
                                     color: Colors.white,

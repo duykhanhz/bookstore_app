@@ -53,7 +53,7 @@ class WelcomePage extends StatelessWidget {
                                           // ignore: deprecated_member_use
                                           color: Theme.of(context)
                                               .colorScheme
-                                              .background,
+                                              .surface,
                                         ),
                                   ),
                                   const SizedBox(height: 10),
@@ -68,7 +68,7 @@ class WelcomePage extends StatelessWidget {
                                             // ignore: deprecated_member_use
                                             color: Theme.of(context)
                                                 .colorScheme
-                                                .background,
+                                                .surface,
                                           ),
                                     ),
                                   ),
