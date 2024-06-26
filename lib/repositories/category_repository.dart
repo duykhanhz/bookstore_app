@@ -16,9 +16,9 @@ class CategoryRepository {
       if (response.statusCode == 200) {
         final List<dynamic> result =
             jsonDecode(utf8.decode(response.bodyBytes));
-        List<CategoryModel> books =
+        List<CategoryModel> cateList =
             result.map((e) => CategoryModel.fromJson(e)).toList();
-        return books;
+        return cateList;
       } else {
         return null;
       }

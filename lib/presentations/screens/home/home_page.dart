@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:inkmelo_app/blocs/genre/genre_bloc.dart';
+import 'package:inkmelo_app/blocs/genre/genre_state.dart';
 import 'package:inkmelo_app/config/colors.dart';
 import 'package:inkmelo_app/presentations/screens/book_detail/book_detail_page.dart';
+import 'package:inkmelo_app/presentations/screens/cart/cart_page.dart';
 import 'package:inkmelo_app/presentations/widgets/book_card.dart';
 
 import '../../../blocs/book/book_bloc.dart';
-import '../../../blocs/category/category_bloc.dart';
+// import '../../../blocs/category/category_bloc.dart';
 import 'app_bar.dart';
 import 'category_widget.dart';
 import 'my_input_text_field.dart';
@@ -24,6 +27,39 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      floatingActionButton: Container(
+        width: 52.5,
+        height: 52.5,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(50),
+          boxShadow: [
+            BoxShadow(
+              color: const Color.fromARGB(255, 186, 186, 186).withOpacity(0.35),
+              spreadRadius: 8,
+              blurRadius: 8,
+              offset: const Offset(0, 1),
+            ),
+          ],
+        ),
+        margin: const EdgeInsets.only(top: 10),
+        child: FittedBox(
+          child: FloatingActionButton(
+            backgroundColor: primaryColor,
+            elevation: 5,
+            shape: const CircleBorder(),
+            onPressed: () async {
+              Navigator.pushNamed(context, CartPage.routeName);
+            },
+            child: const Center(
+                child: Icon(
+              Icons.shopping_bag_outlined,
+              color: Colors.white,
+              size: 30,
+            )),
+          ),
+        ),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -43,7 +79,7 @@ class HomePage extends StatelessWidget {
                           Row(
                             children: [
                               Text(
-                                "Good Morining✌️",
+                                "Hello ✌️",
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyLarge
@@ -55,7 +91,7 @@ class HomePage extends StatelessWidget {
                                     ),
                               ),
                               Text(
-                                "Nitish",
+                                "Khanh",
                                 style: Theme.of(context)
                                     .textTheme
                                     .headlineMedium
@@ -78,7 +114,7 @@ class HomePage extends StatelessWidget {
                                       ?.copyWith(
                                         color: Theme.of(context)
                                             .colorScheme
-                                            .background,
+                                            .surface,
                                       ),
                                 ),
                               ),
@@ -104,23 +140,22 @@ class HomePage extends StatelessWidget {
                             ],
                           ),
                           const SizedBox(height: 10),
-                          BlocBuilder<CategoryBloc, CategoryState>(
+                          BlocBuilder<GenreBloc, GenreState>(
                             builder: (context, state) {
-                              if (state is CategoryLoaded) {
+                              if (state is GenreLoaded) {
                                 return SizedBox(
                                   height: 50,
                                   width: MediaQuery.of(context).size.width,
                                   child: ListView.builder(
                                     scrollDirection: Axis.horizontal,
-                                    itemCount: state.categories.length,
+                                    itemCount: state.genres.length,
                                     itemBuilder: (context, index) {
                                       return CategoryWidget(
-                                          btnName:
-                                              state.categories[index].name);
+                                          btnName: state.genres[index].name);
                                     },
                                   ),
                                 );
-                              } else if (state is CategoryLoading) {
+                              } else if (state is GenreLoading) {
                                 return const Center(
                                   child: CircularProgressIndicator(
                                     color: Colors.white,

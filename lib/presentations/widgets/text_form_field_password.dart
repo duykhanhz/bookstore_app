@@ -34,14 +34,14 @@ class _TextFormFieldPasswordState extends State<TextFormFieldPassword> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 272  ,
       child: TextFormField(
         obscureText: _isObscure,
         validator: widget.validator,
         controller: widget.textController,
         style: GoogleFonts.openSans(
-            textStyle: TextStyle(
+            textStyle: const TextStyle(
                 color: Colors.black,
                 fontSize: 15  ,
                 fontWeight: FontWeight.w700)),
@@ -68,11 +68,11 @@ class _TextFormFieldPasswordState extends State<TextFormFieldPassword> {
                 fontWeight: FontWeight.w900),
           ),
           hintStyle: GoogleFonts.openSans(
-              textStyle: TextStyle(
+              textStyle: const TextStyle(
                   color: kLowTextColor,
                   fontSize: 15  ,
                   fontWeight: FontWeight.w700)),
-          contentPadding: EdgeInsets.symmetric(
+          contentPadding: const EdgeInsets.symmetric(
               horizontal: 26  , vertical: 10  ),
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(28  ),

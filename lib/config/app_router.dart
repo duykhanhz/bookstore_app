@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:inkmelo_app/models/book_model.dart';
 import 'package:inkmelo_app/presentations/screens/book_detail/book_detail_page.dart';
+import 'package:inkmelo_app/presentations/screens/cart/cart_page.dart';
 import 'package:inkmelo_app/presentations/screens/welcome/welcome_page.dart';
 
 import '../presentations/screens/home/home_page.dart';
@@ -15,8 +16,11 @@ class AppRouter {
       case HomePage.routeName:
         return HomePage.route();
 
-       case BookDetailsPage.routeName:
+      case BookDetailsPage.routeName:
         return BookDetailsPage.route(bookModel: settings.arguments as BookModel);
+
+      case CartPage.routeName:
+        return CartPage.route();
       default:
         return _errorRoute();
     }
