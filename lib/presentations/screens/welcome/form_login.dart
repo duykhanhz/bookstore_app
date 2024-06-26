@@ -41,10 +41,11 @@ class _FormLoginState extends State<FormLogin> {
         if (state is AuthenticationSuccess) {
           Navigator.pushNamedAndRemoveUntil(
               context, '/home-page', (Route<dynamic> route) => false);
-        } else {
-          Navigator.pushNamedAndRemoveUntil(
-              context, '/home-page', (Route<dynamic> route) => false);
-        }
+        } 
+        // else {
+        //   Navigator.pushNamedAndRemoveUntil(
+        //       context, '/home-page', (Route<dynamic> route) => false);
+        // }
       },
       child: loginWidget,
     );

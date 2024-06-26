@@ -12,6 +12,7 @@ import 'package:inkmelo_app/blocs/user/user_event.dart';
 import 'package:inkmelo_app/presentations/screens/welcome/welcome_page.dart';
 import 'package:inkmelo_app/repositories/authen_repository.dart';
 import 'package:inkmelo_app/repositories/book_item_repository.dart';
+import 'package:inkmelo_app/repositories/cart_repository.dart';
 import 'package:inkmelo_app/repositories/category_repository.dart';
 import 'package:inkmelo_app/repositories/genre_repository.dart';
 import 'package:inkmelo_app/repositories/user_repository.dart';
@@ -44,6 +45,9 @@ class MyApp extends StatelessWidget {
         ),
         RepositoryProvider(
           create: (context) => BookItemRepository(),
+        ),
+        RepositoryProvider(
+          create: (context) => CartRepository(),
         ),
       ],
       child: MultiBlocProvider(
