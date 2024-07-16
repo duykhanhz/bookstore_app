@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:inkmelo_app/models/book_model.dart';
 import 'package:inkmelo_app/presentations/screens/book_detail/book_detail_page.dart';
 import 'package:inkmelo_app/presentations/screens/cart/cart_page.dart';
+import 'package:inkmelo_app/presentations/screens/registration/registerpage.dart';
 import 'package:inkmelo_app/presentations/screens/welcome/welcome_page.dart';
-
-import '../presentations/screens/home/home_page.dart';
-// import 'package:get/get.dart';
+import 'package:inkmelo_app/presentations/screens/home/home_page.dart';
 
 class AppRouter {
   static Route onGenerateRoute(RouteSettings settings) {
@@ -19,8 +18,12 @@ class AppRouter {
       case BookDetailsPage.routeName:
         return BookDetailsPage.route(bookModel: settings.arguments as BookModel);
 
+      case RegisterPage.routeName:
+        return RegisterPage.route();
+
       case CartPage.routeName:
         return CartPage.route();
+
       default:
         return _errorRoute();
     }
@@ -28,11 +31,15 @@ class AppRouter {
 
   static Route _errorRoute() {
     return MaterialPageRoute(
-        builder: (_) => Scaffold(
-              appBar: AppBar(
-                title: const Text('Error'),
-              ),
-            ),
-        settings: const RouteSettings(name: '/'));
+      builder: (_) => Scaffold(
+        appBar: AppBar(
+          title: const Text('Error'),
+        ),
+        body: const Center(
+          child: Text('No route defined for this path'),
+        ),
+      ),
+      settings: const RouteSettings(name: '/error'),
+    );
   }
 }

@@ -30,10 +30,17 @@ class BookDetailsHeader extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: Image.asset(
-                "assets/images/boundraries.jpg",
-                width: 170,
+
+              child: Image.network(
+                height: 300,
+                width: 250,
+                bookModel.bookCoverImg,
+                fit: BoxFit.fill,
+                errorBuilder: (context, error, stackTrace) {
+                  return Image.asset(
+                    'assets/images/boundraries.jpg',
+                  );
+                },
               ),
             )
           ],

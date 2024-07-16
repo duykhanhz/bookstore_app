@@ -37,7 +37,7 @@ class CartDetail extends Equatable {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['bookTitle'] = bookTitle;
     data['bookAuthor'] = bookAuthor;
     data['bookCoverImg'] = bookCoverImg;

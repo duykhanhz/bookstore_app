@@ -6,7 +6,7 @@ import '../models/cart_detail_model.dart';
 
 class CartRepository {
   String endPoint =
-      'https://inkmelo-springboot-be-s2etd44lba-as.a.run.app/store/api/v1/cart-details';
+      'https://inkmelo-springboot-be-s2etd44lba-as.a.run.app/store/api/v1/customer/user1/cart-details';
 
   Future<List<CartDetail>?> fecthCartDetailByUserName(String userName) async {
     try {

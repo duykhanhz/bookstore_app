@@ -8,7 +8,7 @@ import 'package:inkmelo_app/models/user_model.dart';
 
 class UserRepository {
   String endPoint = '${baseURL}users';
-
+  String registerEndPoint ='https://inkmelo-springboot-be-s2etd44lba-as.a.run.app/store/api/v1/users/register';
   Future<List<UserModel>?> fecthUser() async {
     try {
       final Map<String, String> headers = {'Content-Type': 'application/json'};
@@ -24,6 +24,26 @@ class UserRepository {
         return userList;
       } else {
         return null;
+      }
+    } catch (e) {
+      throw Exception(e.toString());
+    }
+  }
+  Future<bool> registerUser(UserModel userModel) async {
+    try {
+      final Map<String, String> headers = {'Content-Type': 'application/json'};
+      final response = await http.post(
+        Uri.parse(registerEndPoint),
+        headers: headers,
+        body: jsonEncode(userModel.toJson()),
+      );
+
+      if (response.statusCode == 201) {
+        return true; // Registration successful
+      } else {
+        print('Registration failed with status code: ${response.statusCode}');
+        print('Response body: ${response.body}');
+        return false; // Registration failed
       }
     } catch (e) {
       throw Exception(e.toString());

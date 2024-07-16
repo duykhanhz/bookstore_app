@@ -202,6 +202,7 @@ class CartProductCard extends StatelessWidget {
                                   size: 15,
                                 ),
                                 onPressed: () {
+
                                   // context
                                   //     .read<CartBloc>()
                                   //     .add(AddOneProduct(product: product));

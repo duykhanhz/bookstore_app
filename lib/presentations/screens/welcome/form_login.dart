@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:inkmelo_app/presentations/screens/registration/registerpage.dart';
 import 'package:inkmelo_app/presentations/widgets/primary_button.dart';
 import 'package:inkmelo_app/presentations/widgets/text_form_field_default.dart';
 import '../../../blocs/authentication/authentication_bloc.dart';
@@ -67,6 +68,19 @@ class _FormLoginState extends State<FormLogin> {
                     password: passwordController.text.toString()));
               }
             },
+          ),
+          const SizedBox(height: 3),
+          TextButton(
+            onPressed: () {
+              Navigator.pushNamed(context, RegisterPage.routeName);
+            },
+            child: Text(
+              'Đăng ký',
+              style: GoogleFonts.openSans(
+                color: Theme.of(context).primaryColor,
+                fontSize: 14,
+              ),
+            ),
           ),
         ],
       ),

@@ -26,6 +26,7 @@ class WelcomePage extends StatelessWidget {
             child: SingleChildScrollView(
               child: SizedBox(
                 height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
                 child: Column(
                   children: [
                     Container(
@@ -38,23 +39,23 @@ class WelcomePage extends StatelessWidget {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  const SizedBox(height: 50),
+                                  const SizedBox(height: 10),
                                   Image.asset(
                                     "assets/images/logo.svg",
-                                    width: 200,
+                                    width: 100,
                                   ),
-                                  const SizedBox(height: 50),
+                                  const SizedBox(height: 20),
                                   Text(
                                     "InkMelo Book Store",
                                     style: Theme.of(context)
                                         .textTheme
                                         .headlineLarge
                                         ?.copyWith(
-                                          // ignore: deprecated_member_use
-                                          color: Theme.of(context)
-                                              .colorScheme
-                                              .surface,
-                                        ),
+                                      // ignore: deprecated_member_use
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .surface,
+                                    ),
                                   ),
                                   const SizedBox(height: 10),
                                   SizedBox(
@@ -65,11 +66,11 @@ class WelcomePage extends StatelessWidget {
                                           .textTheme
                                           .labelSmall
                                           ?.copyWith(
-                                            // ignore: deprecated_member_use
-                                            color: Theme.of(context)
-                                                .colorScheme
-                                                .surface,
-                                          ),
+                                        // ignore: deprecated_member_use
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .surface,
+                                      ),
                                     ),
                                   ),
                                 ],
