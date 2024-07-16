@@ -5,7 +5,7 @@ import 'package:inkmelo_app/config/constant.dart';
 import 'package:inkmelo_app/models/genre_model.dart';
 
 class GenreRepository {
-  String endPoint = '${baseURL}genres';
+  String endPoint = 'https://inkmelo-springboot-be-s2etd44lba-as.a.run.app/store/api/v1/genres';
 
   Future<List<GenreModel>?> fecthGenre() async {
     try {

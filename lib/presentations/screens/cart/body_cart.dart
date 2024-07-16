@@ -132,7 +132,7 @@ class BodyCart extends StatelessWidget {
                       color: primaryColor,
                       padding: const EdgeInsets.only(
                           left: 15, right: 15, top: 15, bottom: 15),
-                      child: Row(
+                      child: const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           // Row(
@@ -169,7 +169,7 @@ class BodyCart extends StatelessWidget {
                       color: primaryColor,
                       padding: const EdgeInsets.only(
                           left: 15, right: 15, top: 15, bottom: 15),
-                      child: Row(
+                      child: const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           // Row(

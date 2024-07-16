@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 
 class BookCard extends StatelessWidget {
   final String coverUrl;
@@ -21,6 +24,8 @@ class BookCard extends StatelessWidget {
           child: Column(
             children: [
               Container(
+                height: 200,
+
                 decoration: BoxDecoration(
                   boxShadow: [
                     BoxShadow(
@@ -34,12 +39,27 @@ class BookCard extends StatelessWidget {
                     )
                   ],
                 ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: Image.asset(
-                    coverUrl,
-                    width: 120,
-                  ),
+                child: Image.network(
+                  coverUrl,
+                  loadingBuilder: (BuildContext context, Widget child,
+                      ImageChunkEvent? loadingProgress) {
+                    if (loadingProgress == null) {
+                      return child;
+                    } else {
+                      return Center(
+                        child: CircularProgressIndicator(
+                          value: loadingProgress.expectedTotalBytes != null
+                              ? loadingProgress.cumulativeBytesLoaded /
+                                  loadingProgress.expectedTotalBytes!
+                              : null,
+                        ),
+                      );
+                    }
+                  },
+                  errorBuilder: (BuildContext context, Object exception,
+                      StackTrace? stackTrace) {
+                    return Icon(Icons.error);
+                  },
                 ),
               ),
               const SizedBox(height: 10),

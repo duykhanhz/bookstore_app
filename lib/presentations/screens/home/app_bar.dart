@@ -13,13 +13,16 @@ class HomeAppBar extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         SvgPicture.asset("assets/images/dashboard.svg"),
+
         Text(
           "Ink-Mello",
           style: Theme.of(context).textTheme.headlineMedium?.copyWith(
             // ignore: deprecated_member_use
             color: Theme.of(context).colorScheme.background,
+
           ),
         ),
+
         CircleAvatar(
           // ignore: deprecated_member_use
           backgroundColor: Theme.of(context).colorScheme.background,

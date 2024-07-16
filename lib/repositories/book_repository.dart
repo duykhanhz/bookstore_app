@@ -1,12 +1,11 @@
 import 'dart:convert';
 
-import 'package:inkmelo_app/config/constant.dart';
 import 'package:http/http.dart' as http;
 
 import '../models/book_model.dart';
 
 class BookRepository {
-  String endPoint = '${baseURL}books';
+  String endPoint = 'https://inkmelo-springboot-be-s2etd44lba-as.a.run.app/store/api/v1/books';
 
   Future<List<BookModel>?> fecthBooks() async {
     try {

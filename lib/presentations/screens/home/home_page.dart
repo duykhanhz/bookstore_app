@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:inkmelo_app/blocs/genre/genre_bloc.dart';
 import 'package:inkmelo_app/blocs/genre/genre_state.dart';
 import 'package:inkmelo_app/config/colors.dart';
 import 'package:inkmelo_app/presentations/screens/book_detail/book_detail_page.dart';
 import 'package:inkmelo_app/presentations/screens/cart/cart_page.dart';
 import 'package:inkmelo_app/presentations/widgets/book_card.dart';
-
+import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:flutter/src/material/colors.dart';
 import '../../../blocs/book/book_bloc.dart';
 // import '../../../blocs/category/category_bloc.dart';
 import 'app_bar.dart';
 import 'category_widget.dart';
 import 'my_input_text_field.dart';
-
+import 'package:cached_network_image/cached_network_image.dart';
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
   static const String routeName = '/home-page';
@@ -27,6 +29,45 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+      bottomNavigationBar: GNav(
+
+          haptic: true, // haptic feedback
+          tabBorderRadius: 15,
+          tabActiveBorder: Border.all(color: Colors.black, width: 1), // tab button border
+          tabBorder: Border.all(color: Colors.grey, width: 1), // tab button border
+
+          curve: Curves.easeOutExpo, // tab animation curves
+          duration: Duration(milliseconds: 900), // tab animation duration
+          gap: 8, // the tab button gap between icon and text
+          color: Colors.grey[800], // unselected icon color
+          activeColor: Colors.blue, // selected icon and text color
+          iconSize: 24, // tab button icon size
+          tabBackgroundColor: Colors.blue.withOpacity(0.1), // selected tab background color
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5), // navigation bar padding
+          tabs: [
+            GButton(
+              icon: Icons.home,
+              text: 'Home',
+
+            ),
+            GButton(
+              icon: Icons.shopping_cart,
+              text: 'Cart',
+              onPressed: () async {
+                Navigator.pushNamed(context, CartPage.routeName);
+              },
+            ),
+            GButton(
+              icon: Icons.favorite_border,
+              text: 'Favorite',
+            ),
+            GButton(
+              icon: Icons.settings,
+              text: 'Profile',
+            )
+          ]
+      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       floatingActionButton: Container(
         width: 52.5,
@@ -187,12 +228,12 @@ class HomePage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 30),
                   BlocBuilder<BookBloc, BookState>(
                     builder: (context, state) {
                       if (state is BookLoaded) {
                         return SizedBox(
-                          height: 200,
+                          height: context.height,
                           width: MediaQuery.of(context).size.width,
                           child: ListView.builder(
                             scrollDirection: Axis.horizontal,
@@ -201,7 +242,7 @@ class HomePage extends StatelessWidget {
                               var book = state.books[index];
                               return BookCard(
                                 title: book.title,
-                                coverUrl: 'assets/images/boundraries.jpg',
+                                coverUrl: book.bookCoverImg,
                                 ontap: () {
                                   Navigator.pushNamed(
                                       context, BookDetailsPage.routeName,
@@ -249,8 +290,10 @@ class HomePage extends StatelessWidget {
               ),
             ),
           ],
+
         ),
       ),
+
     );
   }
 }

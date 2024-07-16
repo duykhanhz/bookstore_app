@@ -122,10 +122,10 @@ class BookDetailsPage extends StatelessWidget {
                                     .textTheme
                                     .bodyMedium
                                     ?.copyWith(
-                                      color:
-                                          Theme.of(context).colorScheme.surface,
-                                      letterSpacing: 2,
-                                    ),
+                                  color:
+                                  Theme.of(context).colorScheme.surface,
+                                  letterSpacing: 2,
+                                ),
                               ),
                             ],
                           ),

@@ -19,9 +19,9 @@ class BookItemRepository {
       if (response.statusCode == 200) {
         final List<dynamic> result =
         jsonDecode(utf8.decode(response.bodyBytes));
-        List<BookItemModel> book_items_list =
+        List<BookItemModel> bookItemsList =
         result.map((e) => BookItemModel.fromJson(e)).toList();
-        return book_items_list;
+        return bookItemsList;
       } else {
         return null;
       }

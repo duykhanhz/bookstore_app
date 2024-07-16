@@ -77,6 +77,7 @@ class MyApp extends StatelessWidget {
             create: (context) =>
             UserBloc(userRepository:  UserRepository())..add(LoadUser()),
           ),
+
         ],
         child: MaterialApp(
           // navigatorKey: navigatorKey,
