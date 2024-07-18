@@ -51,10 +51,10 @@ class BodyCart extends StatelessWidget {
                                   'No books in cart',
                                   style: GoogleFonts.openSans(
                                       textStyle: const TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 16,
-                                  )),
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 16,
+                                      )),
                                 ),
                               ),
                             ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
+import 'package:inkmelo_app/blocs/bookpackage/book_package_bloc.dart';
+import 'package:inkmelo_app/blocs/bookpackage/book_package_state.dart';
 import 'package:inkmelo_app/blocs/genre/genre_bloc.dart';
 import 'package:inkmelo_app/blocs/genre/genre_state.dart';
 import 'package:inkmelo_app/config/colors.dart';

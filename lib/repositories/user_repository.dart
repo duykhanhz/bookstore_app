@@ -29,24 +29,29 @@ class UserRepository {
       throw Exception(e.toString());
     }
   }
-  Future<bool> registerUser(UserModel userModel) async {
+  Future<bool> registerUser(UserModel user) async {
     try {
       final Map<String, String> headers = {'Content-Type': 'application/json'};
-      final response = await http.post(
+      final body = jsonEncode(user.toJson());
+
+      http.Response response = await http.post(
         Uri.parse(registerEndPoint),
         headers: headers,
-        body: jsonEncode(userModel.toJson()),
+        body: body,
       );
 
       if (response.statusCode == 201) {
-        return true; // Registration successful
+        // Đăng ký thành công
+        return true;
       } else {
-        print('Registration failed with status code: ${response.statusCode}');
-        print('Response body: ${response.body}');
-        return false; // Registration failed
+        // Xử lý lỗi từ server (ví dụ: thông báo người dùng đã tồn tại)
+        print('Failed to register user: ${response.statusCode} - ${response.body}');
+        return false;
       }
     } catch (e) {
-      throw Exception(e.toString());
+      // Xử lý ngoại lệ
+      print('Exception occurred: $e');
+      return false;
     }
   }
 }

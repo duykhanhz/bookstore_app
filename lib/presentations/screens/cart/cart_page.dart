@@ -42,11 +42,10 @@ class CartPage extends StatelessWidget {
                     color: Colors.white)),
           ),
         ),
-
         body: BlocProvider(
           create: (context) =>
               CartBloc(cartRepository: context.read<CartRepository>())..add(const LoadCart(userName: 'user1')),
-          child: const BodyCart(),
+          child: BodyCart(),
         ),
 
       ),

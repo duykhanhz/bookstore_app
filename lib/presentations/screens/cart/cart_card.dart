@@ -66,10 +66,10 @@ class CartProductCard extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                       style: GoogleFonts.openSans(
                           textStyle:const TextStyle(
-                        fontSize: 15  ,
-                        color: Colors.black,
-                        fontWeight: FontWeight.w600,
-                      ))),
+                            fontSize: 15  ,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w600,
+                          ))),
                 ),
                 Text(book.bookAuthor,
                     softWrap: true,
@@ -77,27 +77,27 @@ class CartProductCard extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     style: GoogleFonts.openSans(
                         textStyle:const TextStyle(
-                      fontSize: 14  ,
-                      color: kLowTextColor,
-                      fontWeight: FontWeight.normal,
-                    ))),
+                          fontSize: 14  ,
+                          color: kLowTextColor,
+                          fontWeight: FontWeight.normal,
+                        ))),
                 Row(
                   children: [
                     Text(
                       '${book.bookPackagePrice}',
                       style: GoogleFonts.openSans(
                           textStyle:const TextStyle(
-                        fontSize: 16  ,
-                        color: Colors.red,
-                        fontWeight: FontWeight.bold,
-                      )),
+                            fontSize: 16  ,
+                            color: Colors.red,
+                            fontWeight: FontWeight.bold,
+                          )),
                     ),
                     const SizedBox(
                       width: 5  ,
                     ),
                   ],
                 ),
-               const SizedBox(
+                const SizedBox(
                   height: 5  ,
                 ),
               ],
@@ -132,11 +132,11 @@ class CartProductCard extends StatelessWidget {
                         foregroundColor: primaryColor,
                         child:const Center(
                             child: Text(
-                          'x',
-                          style: TextStyle(fontSize: 15),
-                        ))),
+                              'x',
+                              style: TextStyle(fontSize: 15),
+                            ))),
                   ),
-                 const SizedBox(
+                  const SizedBox(
                     height: 25  ,
                   ),
                   BlocBuilder<CartBloc, CartState>(
@@ -183,7 +183,7 @@ class CartProductCard extends StatelessWidget {
                               ),
                             ),
                           ),
-                         const SizedBox(
+                          const SizedBox(
                             width: 5  ,
                           ),
                           Container(
