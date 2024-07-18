@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:inkmelo_app/config/Colors.dart';
+import 'package:inkmelo_app/presentations/screens/cart/cart_page.dart';
 import 'package:inkmelo_app/presentations/widgets/primary_button.dart';
 import 'package:inkmelo_app/repositories/cart_repository.dart';
 
@@ -96,6 +97,8 @@ class BookDetailsPage extends StatelessWidget {
                     Center(
                       child: InkWell(
                         onTap: () {
+                          Navigator.pushNamed(
+                              context, CartPage.routeName);
                           // context.read<CartBloc>().add(AddToCart(bookPackageId: bookModel., userName: userName, quantity: quantity))
                         },
                         child: Container(
@@ -112,9 +115,11 @@ class BookDetailsPage extends StatelessWidget {
                               const Icon(
                                 Icons.shopping_bag_rounded,
                                 color: Colors.white,
+
                               ),
                               const SizedBox(
                                 width: 10,
+
                               ),
                               Text(
                                 'Add to cart',

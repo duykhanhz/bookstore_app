@@ -1,38 +1,35 @@
+
+
 import 'package:equatable/equatable.dart';
+import 'package:inkmelo_app/entities/order_detail.dart';
 
-class Order extends Equatable {
+class Order extends Equatable{
   final int id;
-  final double totalPrice;
-  final String shipmentName;
-  final String shipmentAddress;
-  final String phone;
-  final String createdAt;
-  final int customerID;
-  final int paymentID;
-  final String status;
+  final String? ghnOrderCode;
+  final int orderPrice;
+  final int shippingFee;
+  final int totalPrice;
+  final List<OrderDetail> detail;
 
-  const Order(
-      {required this.id,
-      required this.totalPrice,
-      required this.shipmentName,
-      required this.shipmentAddress,
-      required this.phone,
-      required this.createdAt,
-      required this.customerID,
-      required this.paymentID,
-      required this.status});
+  const Order({
+    required this.id,
+    this.ghnOrderCode,
+    required this.orderPrice,
+    required this.shippingFee,
+    required this.totalPrice,
+    required this.detail,
+});
+
 
   @override
   // TODO: implement props
   List<Object?> get props => [
-        id,
-        totalPrice,
-        shipmentName,
-        shipmentAddress,
-        phone,
-        createdAt,
-        customerID,
-        paymentID,
-        status
-      ];
+    id,
+    ghnOrderCode,
+    orderPrice,
+    shippingFee,
+    totalPrice,
+    detail,
+  ];
+
 }

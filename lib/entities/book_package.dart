@@ -1,38 +1,28 @@
 import 'package:equatable/equatable.dart';
+import 'package:inkmelo_app/entities/book.dart';
+import 'package:inkmelo_app/entities/book_item.dart';
+import 'package:inkmelo_app/entities/genre.dart';
 
 class BookPackage extends Equatable {
   final int id;
   final String title;
   final String description;
-  final double price;
-  final int mode;
-  final String createdAt;
-  final String lastUpdatedTime;
-  final String lastChangedBy;
-  final String status;
+  final int price;
+  final int modeId;
+  final int stock;
 
-  const BookPackage(
+
+const  BookPackage(
       {required this.id,
       required this.title,
       required this.description,
       required this.price,
-      required this.mode,
-      required this.createdAt,
-      required this.lastUpdatedTime,
-      required this.lastChangedBy,
-      required this.status});
+      required this.modeId,
+      required this.stock,
+      });
 
   @override
   // TODO: implement props
-  List<Object?> get props => [
-        id,
-        title,
-        description,
-        price,
-        mode,
-        createdAt,
-        lastUpdatedTime,
-        lastChangedBy,
-        status
-      ];
+  List<Object?> get props =>
+      [id, title, description, price, modeId, stock];
 }

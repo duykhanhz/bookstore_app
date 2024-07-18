@@ -1,18 +1,20 @@
 import 'package:equatable/equatable.dart';
 
 class CartDetail extends Equatable {
+  final int id;
   final String bookTitle;
   final String bookAuthor;
   final String bookCoverImg;
   final String bookPackageTitle;
   final String bookPackageDescription;
-  final double bookPackagePrice;
+  final int bookPackagePrice;
   final int bookPackageStock;
   final int quantity;
   final String lastUpdatedTime;
 
   const CartDetail(
-      {required this.bookTitle,
+      {required this.id,
+      required this.bookTitle,
       required this.bookAuthor,
       required this.bookCoverImg,
       required this.bookPackageTitle,
@@ -24,6 +26,7 @@ class CartDetail extends Equatable {
 
   factory CartDetail.fromJson(Map<String, dynamic> json) {
     return CartDetail(
+      id: json['id'],
       bookTitle: json['bookTitle'],
       bookAuthor: json['bookAuthor'],
       bookCoverImg: json['bookCoverImg'],
@@ -38,6 +41,7 @@ class CartDetail extends Equatable {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
     data['bookTitle'] = bookTitle;
     data['bookAuthor'] = bookAuthor;
     data['bookCoverImg'] = bookCoverImg;
@@ -52,6 +56,7 @@ class CartDetail extends Equatable {
 
   @override
   List<Object?> get props => [
+        id,
         bookTitle,
         bookAuthor,
         bookCoverImg,

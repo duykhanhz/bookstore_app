@@ -8,6 +8,7 @@ class BookItem extends Equatable {
   final String type;
   final String source;
   final int duration;
+  final int stock;
   final String createdAt;
   final String lastUpdatedTime;
   final String lastChangedBy;
@@ -19,6 +20,7 @@ class BookItem extends Equatable {
       required this.bookTitle,
       required this.bookCoverImg,
       required this.type,
+        required this.stock,
       required this.source,
       required this.duration,
       required this.createdAt,
@@ -34,6 +36,7 @@ class BookItem extends Equatable {
         bookCoverImg,
         type,
         source,
+    stock,
         duration,
         createdAt,
         lastUpdatedTime,

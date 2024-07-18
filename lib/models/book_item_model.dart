@@ -9,6 +9,7 @@ class BookItemModel extends BookItem {
       required super.bookCoverImg,
       required super.type,
       required super.source,
+        required super.stock,
       required super.duration,
       required super.createdAt,
       required super.lastUpdatedTime,
@@ -22,6 +23,7 @@ class BookItemModel extends BookItem {
         bookTitle: json['bookTitle'],
         bookCoverImg: json['bookCoverImg'],
         type: json['type'],
+        stock: json['stock'],
         source: json['source'],
         duration: json['duration'],
         createdAt: json['createdAt'],
@@ -36,6 +38,7 @@ class BookItemModel extends BookItem {
     data['bookTitle'] = bookTitle;
     data['bookCoverImg'] = bookCoverImg;
     data['type'] = type;
+    data['stock'] = stock;
     data['source'] = source;
     data['duration'] = duration;
     data['createdAt'] = createdAt;
